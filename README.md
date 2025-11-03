@@ -1,4 +1,4 @@
-### Hi there! 👋
+### Hi there! 
 
 I'm Remas Alsulami, a Junior Software Engineering student at the University of Jeddah with a growing passion for Web Development and User Experience (UX).  
 I enjoy creating clean, simple, and user-friendly web experiences. Currently, I’m building projects to improve my skills and understand both the visual and technical sides of the web.
@@ -7,13 +7,12 @@ I enjoy creating clean, simple, and user-friendly web experiences. Currently, I�
 
 ###  About Me
 
--  Junior Software Engineering student interested in Front-End & UX
 -  Learning full-stack development step by step  
 -  Comfortable with HTML, CSS, and JavaScript
 -  Currently learning Node.js, and planning to learn React next
 
 ---
-### 🛠️ Languages & Tools
+###  Languages & Tools
 <p align="left">
 
   <!-- Languages -->
