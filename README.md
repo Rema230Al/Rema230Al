@@ -1,6 +1,6 @@
 ### Hi there! 
 
-I'm Remas Alsulami, a Junior Software Engineering student at the University of Jeddah with a growing passion for Web Development and (UX|UI).I enjoy creating clean, simple, and user-friendly web experiences.I'm also interested in Augmented Reality (AR) and Virtual Reality (VR), and I'm excited to explore them in the future.Currently, I’m building projects to improve my skills and understand both the visual and technical sides of the web.
+I'm Remas Alsulami, a Junior Software Engineering student at the University of Jeddah with a growing passion for Web Development and (UX|UI).I enjoy creating clean, simple, and user-friendly web experiences.Currently,I’m building projects to improve my skills and understand both the visual and technical sides of the web.
 
 ---
 
