@@ -1,0 +1,84 @@
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index:200;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:1rem 5rem;
+    background:rgba(237,232,216,0.93);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--rule)
+}
+.navbar-brand{
+    display:flex;
+    align-items:center;
+    gap:0.8rem;
+    text-decoration:none
+}
+.brand-mono{
+    width:44px;
+    height:44px;
+    border:1.5px solid var(--brown);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:"Cormorant SC",serif;
+    font-size:1.3rem;
+    font-weight:700;
+    color:var(--brown)
+}
+.brand-txt{
+    display:flex;
+    flex-direction:column;
+    line-height:1.15
+}
+.brand-name{
+    font-family:"Cormorant SC",serif;font-size:1rem;
+    font-weight:600;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--text)
+}
+.brand-role{
+    font-size:0.58rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--text-muted)
+}
+.nav-links{
+    display:flex;
+    gap:3rem;
+    list-style:none
+}
+.nav-links a{
+    font-family:"Cormorant SC",serif;
+    font-size:1.05rem;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    text-decoration:none;
+    color:var(--text-mid);
+    font-weight:500;
+    position:relative;
+    transition:color .25s
+}
+.nav-links a::after{
+    content:"";
+    position:absolute;
+    bottom:-4px;
+    left:0;
+    right:0;
+    height:1.5px;
+    background:var(--blue);
+    transform:scaleX(0);
+    transform-origin:left;
+    transition:transform .3s
+}
+.nav-links a:hover,.nav-links a.active{
+    color:var(--text)
+}
+.nav-links a:hover::after,.nav-links a.active::after{
+    transform:scaleX(1)
+}

@@ -1,0 +1,76 @@
+:root{
+  --bg:#ede8d8;--bg2:#e5dfc8;--parchment:#f2ead6;
+  --text:#2c1f0e;--text-mid:#5a4232;--text-muted:#8a7060;
+  --brown:#6b4a28;--brown-l:#9a7040;--gold:#b8913a;--gold-l:#d4a84a;
+  --blue:#5a9aae;--blue-l:#7eb8c9;--rule:rgba(90,66,50,0.15);
+}
+
+html{
+    scroll-behavior:smooth
+}
+body{
+    font-family:Inter,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    overflow-x:hidden
+}
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;pointer-events:none;
+  z-index:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+}
+.main{padding-top:68px}
+.cursor{
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:var(--blue);
+    position:fixed;
+    pointer-events:none;
+    z-index:9999;
+    transform:translate(-50%,-50%);
+    mix-blend-mode:multiply
+}
+
+
+section{
+    min-height:100vh;
+    padding:6rem 5rem;
+    display:grid;
+    grid-template-columns:260px 1fr;
+    gap:5rem;
+    align-items:start;
+    position:relative
+}
+.sec-left{
+    display:flex;
+    flex-direction:column;
+    /* gap:0.9rem */
+}
+.sec-num{
+    font-family:"EB Garamond",serif;
+    font-size:1rem;
+    color:var(--text-muted)
+}
+.sec-title{
+    font-family:"Cormorant SC",serif;
+    font-size:clamp(3rem,4vw,5rem);
+    font-weight:600;
+    color:var(--text);
+    line-height:1;
+    letter-spacing:0.02em
+}
+.sec-rule{
+    width:32px;
+    height:1px;
+    background:var(--gold)
+}
+.sec-desc{
+    font-family:"EB Garamond",serif;
+    font-size:1rem;
+    line-height:1.75;
+    color:var(--text-mid);
+    max-width:45ch
+}
