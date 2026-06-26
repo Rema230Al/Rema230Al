@@ -6,14 +6,16 @@ Currently,I’m building projects to improve my skills and understand both the v
 
 ---
 
-###  About Me
+### About Me
 
--  Learning full-stack development step by step  
--  Comfortable with HTML, CSS, and JavaScript
--  Currently learning Node.js, and planning to learn React next
+- Learning full-stack development step by step  
+- Comfortable with HTML, CSS, and JavaScript
+- Currently learning Node.js, and planning to learn React next
 
 ---
-###  Languages & Tools
+
+### Languages & Tools
+
 <p align="left">
 
   <!-- Languages -->
@@ -58,6 +60,14 @@ Currently,I’m building projects to improve my skills and understand both the v
   </a>
   <a href="https://react.dev/learn" target="_blank">
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" height="34" alt="React"/>
+  </a>
+
+  <!-- Added -->
+  <a href="https://www.mongodb.com/docs/" target="_blank">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" height="34" alt="MongoDB"/>
+  </a>
+  <a href="https://learning.postman.com/docs/" target="_blank">
+    <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" height="34" alt="Postman"/>
   </a>
 
 </p>
