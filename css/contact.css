@@ -112,10 +112,18 @@
     width:68px;
     z-index:5
 }
-.c-tab:nth-child(1):hover{background:#d4c49a}
-.c-tab:nth-child(2):hover{background:#c9b88a}
-.c-tab:nth-child(3):hover{background:#c0ae80}
-.c-tab:nth-child(4):hover{background:#b8a474}
+.c-tab:nth-child(1):hover{
+    background:#d4c49a
+}
+.c-tab:nth-child(2):hover{
+    background:#c9b88a
+}
+.c-tab:nth-child(3):hover{
+    background:#c0ae80
+}
+.c-tab:nth-child(4):hover{
+    background:#b8a474
+}
 
 .c-tab:hover::before{
     content:"";
@@ -212,7 +220,7 @@
     display:inline-block
 }
 
-/* LinkedIn icon style */
+
 .c-tab-icon--in{
     font-family:Inter,sans-serif;
     font-weight:700;

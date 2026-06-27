@@ -176,14 +176,14 @@
 
 
 
-/* Projects section layout overrides */
+
 #projects{
    display:block;
    padding:5rem 5rem 6rem;
    min-height:auto
 }
 
-/* Project 1 — Atelier */
+
 .proj-screen-atelier{
    background:linear-gradient(135deg,#1a1a2e,#16213e);
    padding:1rem
@@ -203,7 +203,7 @@
    padding:0.5rem 0.4rem
 }
 
-/* Project 2 — TaskFlow */
+
 .proj-screen-taskflow{
    background:#f8f9fa;
    padding:0.8rem
@@ -213,7 +213,7 @@
    padding:0.4rem
 }
 
-/* Project 3 — AR */
+
 .proj-screen-ar{
    background:linear-gradient(135deg,#0d1b0d,#1a2e1a);
    padding:0.8rem;
