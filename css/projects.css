@@ -1,15 +1,9 @@
-/* =====================
-   PROJECTS SECTION
-   ===================== */
-
 #projects {
   display: block;
   padding: 5rem 5rem 6rem;
   min-height: auto;
   background: var(--bg);
 }
-
-/* ── Section Header ── */
 .proj-section-header {
   margin-bottom: 3rem;
   max-width: 400px;
@@ -21,7 +15,6 @@
   margin-top: 0.5rem;
 }
 
-/* ── Project Layout ── */
 .proj-full {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -45,7 +38,6 @@
   direction: ltr;
 }
 
-/* ── Project Info ── */
 .proj-full-cat {
   font-size: 0.62rem;
   letter-spacing: 0.28em;
@@ -99,7 +91,7 @@
   margin-bottom: 1.8rem;
 }
 
-/* ── Project Buttons ── */
+
 .proj-full-links {
   display: flex;
   gap: 1rem;
@@ -137,7 +129,6 @@
   color: #fff;
 }
 
-/* ── Project Visual ── */
 .proj-full-visual {
   position: relative;
   height: 320px;
@@ -147,7 +138,7 @@
   overflow: hidden;
 }
 
-/* ── Real Project Images ── */
+
 .proj-img {
   width: 100%;
   height: 100%;
@@ -161,28 +152,29 @@
   transform: scale(1.02);
 }
 
-/* ── Device Mockup Scene ── */
+
 .proj-full-img-wrap {
   width: 100%;
   height: 100%;
   position: relative;
 }
 
+/* 
 .proj-device-scene {
   position: relative;
   width: 100%;
   height: 100%;
-}
+} */
 
 /* Laptop */
-.proj-laptop {
+/* .proj-laptop {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 80%;
-}
+} */
 
-.proj-laptop-screen {
+/* .proj-laptop-screen {
   width: 100%;
   padding-top: 62%;
   position: relative;
@@ -190,22 +182,22 @@
   border-radius: 6px 6px 0 0;
   border: 3px solid #2a2a2a;
   overflow: hidden;
-}
+} */
 
-.proj-laptop-screen .proj-screen-content {
+/* .proj-laptop-screen .proj-screen-content {
   position: absolute;
   inset: 0;
   overflow: hidden;
-}
+} */
 
-.proj-laptop-base {
+/* .proj-laptop-base {
   height: 10px;
   background: linear-gradient(180deg, #3a3a3a, #2a2a2a);
   border-radius: 0 0 4px 4px;
   width: 100%;
-}
+} */
 
-.proj-laptop-base::before {
+/* .proj-laptop-base::before {
   content: "";
   display: block;
   width: 30%;
@@ -213,16 +205,15 @@
   background: #222;
   margin: 0 auto;
   border-radius: 0 0 4px 4px;
-}
+} */
 
-/* Phone */
-.proj-phone {
+/* .proj-phone {
   position: absolute;
   bottom: 10px;
   right: 0;
   width: 26%;
   z-index: 2;
-}
+} */
 
 /* .proj-phone-screen {
   width: 100%;
@@ -275,7 +266,7 @@
 }
 
 /* Project 3 — AR */
-.proj-screen-ar {
+/* .proj-screen-ar {
   background: linear-gradient(135deg, #0d1b0d, #1a2e1a);
   padding: 0.8rem;
   display: flex;
@@ -290,4 +281,4 @@
   flex-direction: column;
   align-items: center;
   justify-content: center; */
-}
+/* } */

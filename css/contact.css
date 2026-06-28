@@ -220,13 +220,11 @@
     display:inline-block
 }
 
-
 .c-tab-icon--in{
     font-family:Inter,sans-serif;
     font-weight:700;
     font-size:0.7rem
 }
-
 
 .c-resume-link{
   color:var(--blue);font-size:0.72rem;
