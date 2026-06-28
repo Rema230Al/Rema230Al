@@ -1,0 +1,340 @@
+@media (max-width: 1024px) {
+
+  section {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding: 4rem 3rem;
+  }
+
+  
+  #hero {
+    grid-template-columns: 1fr;
+    padding: 6rem 3rem 3rem;
+    gap: 3rem;
+    min-height: auto;
+  }
+
+  .hero-right {
+    height: 400px;
+  }
+
+  .real-book {
+    width: 200px;
+    height: 270px;
+  }
+
+  .h-script-paper {
+    width: 180px;
+    height: 240px;
+  }
+
+  
+  #about {
+    grid-template-columns: 1fr;
+  }
+
+  .about-tickets {
+    align-items: center;
+    padding-right: 0;
+  }
+
+  .ticket-wrap {
+    width: 340px;
+    height: 160px;
+  }
+
+  .ticket-gap {
+    width: 340px;
+  }
+
+
+  .skills-right {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  
+  #projects {
+    padding: 4rem 3rem;
+  }
+
+  .proj-full {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    height: auto;
+    width: auto;
+  }
+
+  .proj-full.reverse {
+    direction: ltr;
+  }
+
+  .proj-full-visual {
+    height: 250px;
+  }
+
+  .proj-full-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+  }
+
+
+  #contact {
+    grid-template-columns: 1fr;
+    padding-left: 3rem;
+  }
+
+  .contact-right {
+    justify-content: center;
+    padding-left: 0;
+  }
+
+  .c-real-book {
+    width: 240px;
+    height: 320px;
+  }
+
+  .c-tabs-col {
+    height: 320px;
+    right: -58px;
+  }
+}
+
+
+
+
+@media (max-width: 768px) {
+
+ 
+  .navbar {
+    padding: 1rem 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .nav-links {
+    gap: 1.2rem;
+  }
+
+  .nav-links a {
+    font-size: 0.75rem;
+  }
+
+
+  section {
+    padding: 3rem 1.5rem;
+    gap: 2rem;
+  }
+
+  .sec-title {
+    font-size: clamp(2.2rem, 8vw, 3.5rem);
+  }
+
+
+  #hero {
+    padding: 5rem 1.5rem 2rem;
+    text-align: center;
+  }
+
+  .hero-welcome {
+    justify-content: center;
+  }
+
+  .hero-name {
+    font-size: clamp(3rem, 10vw, 4.5rem);
+  }
+
+  .hero-role {
+    font-size: clamp(1.4rem, 5vw, 2rem);
+  }
+
+  .hero-desc {
+    max-width: 100%;
+    font-size: 1rem;
+  }
+
+  .hero-cta {
+    margin: 2rem auto 0;
+  }
+
+  .hero-right {
+    height: 320px;
+  }
+
+  .real-book {
+    width: 160px;
+    height: 220px;
+  }
+
+  .h-script-paper {
+    width: 140px;
+    height: 190px;
+    right: 5px;
+  }
+
+ 
+  .about-tickets {
+    align-items: center;
+    padding-right: 0;
+  }
+
+  .ticket-wrap {
+    width: 280px;
+    height: 140px;
+  }
+
+  .ticket-gap {
+    width: 280px;
+    height: 80px;
+  }
+
+  .ticket-year {
+    font-size: 2rem;
+  }
+
+  .ticket-label {
+    font-size: 0.62rem;
+  }
+
+  .ticket-subtitle {
+    font-size: 0.72rem;
+  }
+
+  
+  .skills-right {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .skill-card {
+    min-height: auto;
+    padding: 2rem 1.5rem 2.5rem;
+  }
+
+  
+  #projects {
+    padding: 3rem 1.5rem;
+  }
+
+  .proj-full {
+    padding: 2rem 0;
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+  }
+
+  .proj-full-title {
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+  }
+
+  .proj-full-visual {
+    height: 200px;
+  }
+
+  .proj-img {
+    border-radius: 4px;
+  }
+
+  .proj-full-links {
+    flex-wrap: wrap;
+  }
+
+  
+  #contact {
+    padding: 3rem 1.5rem 4rem;
+    padding-left: 1.5rem;
+  }
+
+  .contact-right {
+    justify-content: center;
+    padding-left: 0;
+  }
+
+  .c-real-book {
+    width: 180px;
+    height: 250px;
+  }
+
+  .c-tabs-col {
+    height: 250px;
+    right: -52px;
+  }
+
+  .c-tab {
+    width: 50px;
+  }
+
+  .c-tab:hover {
+    width: 58px;
+  }
+
+  .c-info {
+    width: 180px;
+    padding: 1rem;
+    left: calc(100% + 8px);
+  }
+
+  
+  footer {
+    padding: 1.5rem;
+    text-align: center;
+  }
+}
+
+
+
+
+@media (max-width: 480px) {
+
+  .navbar {
+    padding: 0.8rem 1rem;
+  }
+
+  .nav-links {
+    gap: 0.8rem;
+  }
+
+  .nav-links a {
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+  }
+
+  #hero {
+    padding: 4.5rem 1rem 2rem;
+  }
+
+  .hero-name {
+    font-size: clamp(2.5rem, 12vw, 3.5rem);
+  }
+
+  .ticket-wrap {
+    width: 240px;
+    height: 120px;
+  }
+
+  .ticket-gap {
+    width: 240px;
+    height: 60px;
+  }
+
+  .ticket-year {
+    font-size: 1.7rem;
+  }
+
+  .proj-full-title {
+    font-size: clamp(1.5rem, 7vw, 2rem);
+  }
+
+  .c-real-book {
+    width: 150px;
+    height: 210px;
+  }
+
+  .c-tabs-col {
+    height: 210px;
+    right: -46px;
+  }
+
+  .c-info {
+    width: 160px;
+    font-size: 0.85rem;
+  }
+}
