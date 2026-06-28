@@ -6,7 +6,6 @@
     padding: 4rem 3rem;
   }
 
-  
   #hero {
     grid-template-columns: 1fr;
     padding: 6rem 3rem 3rem;
@@ -14,48 +13,23 @@
     min-height: auto;
   }
 
-  .hero-right {
-    height: 400px;
-  }
+  .hero-right    { height: 400px }
+  .real-book     { width: 200px; height: 270px }
+  .h-script-paper { width: 180px; height: 240px }
 
-  .real-book {
-    width: 200px;
-    height: 270px;
-  }
-
-  .h-script-paper {
-    width: 180px;
-    height: 240px;
-  }
-
-  
-  #about {
-    grid-template-columns: 1fr;
-  }
+  #about { grid-template-columns: 1fr }
 
   .about-tickets {
     align-items: center;
     padding-right: 0;
   }
 
-  .ticket-wrap {
-    width: 340px;
-    height: 160px;
-  }
+  .ticket-wrap { width: 340px; height: 160px }
+  .ticket-gap  { width: 340px }
 
-  .ticket-gap {
-    width: 340px;
-  }
+  .skills-right { grid-template-columns: repeat(2, 1fr) }
 
-
-  .skills-right {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  
-  #projects {
-    padding: 4rem 3rem;
-  }
+  #projects { padding: 4rem 3rem }
 
   .proj-full {
     grid-template-columns: 1fr;
@@ -64,18 +38,9 @@
     width: auto;
   }
 
-  .proj-full.reverse {
-    direction: ltr;
-  }
-
-  .proj-full-visual {
-    height: 250px;
-  }
-
-  .proj-full-title {
-    font-size: clamp(2rem, 4vw, 3rem);
-  }
-
+  .proj-full.reverse { direction: ltr }
+  .proj-full-visual  { height: 250px }
+  .proj-full-title   { font-size: clamp(2rem, 4vw, 3rem) }
 
   #contact {
     grid-template-columns: 1fr;
@@ -87,118 +52,101 @@
     padding-left: 0;
   }
 
-  .c-real-book {
-    width: 240px;
-    height: 320px;
-  }
-
-  .c-tabs-col {
-    height: 320px;
-    right: -58px;
-  }
+  .c-real-book { width: 200px; height: 280px }
+  .c-tabs-col  { height: 280px; right: -55px }
 }
-
-
-
 
 @media (max-width: 768px) {
 
- 
   .navbar {
-    padding: 1rem 1.5rem;
-    flex-wrap: wrap;
-    gap: 1rem;
+    padding: 0.8rem 1.2rem;
+    gap: 0.5rem;
   }
 
-  .nav-links {
-    gap: 1.2rem;
-  }
+  .nav-links { gap: 1rem }
 
   .nav-links a {
-    font-size: 0.75rem;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
   }
-
 
   section {
     padding: 3rem 1.5rem;
     gap: 2rem;
   }
 
-  .sec-title {
-    font-size: clamp(2.2rem, 8vw, 3.5rem);
-  }
-
+  .sec-title { font-size: clamp(2.2rem, 8vw, 3.5rem) }
 
   #hero {
     padding: 5rem 1.5rem 2rem;
     text-align: center;
   }
 
-  .hero-welcome {
-    justify-content: center;
-  }
-
-  .hero-name {
-    font-size: clamp(3rem, 10vw, 4.5rem);
-  }
-
-  .hero-role {
-    font-size: clamp(1.4rem, 5vw, 2rem);
-  }
-
-  .hero-desc {
-    max-width: 100%;
-    font-size: 1rem;
-  }
-
-  .hero-cta {
-    margin: 2rem auto 0;
-  }
-
-  .hero-right {
-    height: 320px;
-  }
-
-  .real-book {
-    width: 160px;
-    height: 220px;
-  }
+  .hero-welcome   { justify-content: center }
+  .hero-name      { font-size: clamp(2.8rem, 10vw, 4rem) }
+  .hero-role      { font-size: clamp(1.3rem, 5vw, 1.8rem) }
+  .hero-desc      { max-width: 100%; font-size: 0.95rem }
+  .hero-cta       { margin: 2rem auto 0 }
+  .hero-right     { height: 300px }
+  .real-book      { width: 150px; height: 205px }
 
   .h-script-paper {
-    width: 140px;
-    height: 190px;
+    width: 130px;
+    height: 180px;
     right: 5px;
   }
 
- 
+  #about { grid-template-columns: 1fr }
+
   .about-tickets {
     align-items: center;
     padding-right: 0;
+    width: 100%;
+  }
+
+  .ticket-timeline-item {
+    justify-content: center;
+    width: 100%;
   }
 
   .ticket-wrap {
-    width: 280px;
-    height: 140px;
+    width: 90vw;
+    max-width: 340px;
+    height: 130px;
   }
+
+  .ticket-img-wrap {
+    left: 0;
+  }
+
+  .ticket-img-wrap img {
+    left: 0;
+    width: 100%;
+  }
+
+  .ticket-content {
+    left: 0;
+    padding: 0.5rem 1.5rem;
+  }
+
+  .ticket-label    { font-size: 0.6rem; letter-spacing: 0.15em }
+  .ticket-year     { font-size: 1.8rem }
+  .ticket-subtitle { font-size: 0.65rem }
 
   .ticket-gap {
-    width: 280px;
-    height: 80px;
+    width: 90vw;
+    max-width: 340px;
+    height: 60px;
+    align-self: center;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 
-  .ticket-year {
-    font-size: 2rem;
+  .ticket-gap::before {
+    left: 50%;
+    transform: translateX(-50%);
   }
 
-  .ticket-label {
-    font-size: 0.62rem;
-  }
-
-  .ticket-subtitle {
-    font-size: 0.72rem;
-  }
-
-  
   .skills-right {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -209,10 +157,7 @@
     padding: 2rem 1.5rem 2.5rem;
   }
 
-  
-  #projects {
-    padding: 3rem 1.5rem;
-  }
+  #projects { padding: 3rem 1.5rem }
 
   .proj-full {
     padding: 2rem 0;
@@ -221,120 +166,97 @@
     border-radius: 0.5rem;
   }
 
-  .proj-full-title {
-    font-size: clamp(1.8rem, 6vw, 2.5rem);
-  }
+  .proj-full.reverse { direction: ltr }
+  .proj-full-title   { font-size: clamp(1.8rem, 6vw, 2.5rem) }
+  .proj-full-visual  { height: 200px }
+  .proj-full-links   { flex-wrap: wrap }
 
-  .proj-full-visual {
-    height: 200px;
-  }
-
-  .proj-img {
-    border-radius: 4px;
-  }
-
-  .proj-full-links {
-    flex-wrap: wrap;
-  }
-
-  
   #contact {
     padding: 3rem 1.5rem 4rem;
     padding-left: 1.5rem;
+    grid-template-columns: 1fr;
   }
 
   .contact-right {
     justify-content: center;
     padding-left: 0;
+    padding-right: 4rem;
   }
 
   .c-real-book {
-    width: 180px;
-    height: 250px;
+    width: 160px;
+    height: 220px;
   }
 
   .c-tabs-col {
-    height: 250px;
-    right: -52px;
+    height: 220px;
+    right: -50px;
   }
 
-  .c-tab {
-    width: 50px;
+  .c-tab       { width: 46px }
+  .c-tab:hover { width: 54px }
+
+  .c-tab-label {
+    font-size: 0.38rem;
+    letter-spacing: 0.12em;
   }
 
-  .c-tab:hover {
-    width: 58px;
-  }
+  .c-tab-icon { font-size: 0.75rem }
 
   .c-info {
-    width: 180px;
-    padding: 1rem;
-    left: calc(100% + 8px);
+    left: auto;
+    right: calc(100% + 8px);
+    width: 160px;
+    padding: 0.8rem 1rem;
   }
 
-  
+  .c-info-title { font-size: 0.95rem }
+  .c-info-value { font-size: 0.82rem }
+  .c-info-sub   { font-size: 0.75rem }
+
   footer {
     padding: 1.5rem;
     text-align: center;
   }
 }
 
-
-
-
 @media (max-width: 480px) {
 
-  .navbar {
-    padding: 0.8rem 1rem;
-  }
+  .navbar    { padding: 0.8rem 1rem }
+  .nav-links { gap: 0.7rem }
+  .nav-links a { font-size: 0.6rem }
 
-  .nav-links {
-    gap: 0.8rem;
-  }
-
-  .nav-links a {
-    font-size: 0.65rem;
-    letter-spacing: 0.1em;
-  }
-
-  #hero {
-    padding: 4.5rem 1rem 2rem;
-  }
-
-  .hero-name {
-    font-size: clamp(2.5rem, 12vw, 3.5rem);
-  }
+  #hero      { padding: 4.5rem 1rem 2rem }
+  .hero-name { font-size: clamp(2.3rem, 11vw, 3rem) }
 
   .ticket-wrap {
-    width: 240px;
-    height: 120px;
+    width: 85vw;
+    height: 115px;
   }
+
+  .ticket-year     { font-size: 1.5rem }
+  .ticket-label    { font-size: 0.55rem }
+  .ticket-subtitle { font-size: 0.6rem }
 
   .ticket-gap {
-    width: 240px;
-    height: 60px;
+    width: 85vw;
+    height: 50px;
   }
 
-  .ticket-year {
-    font-size: 1.7rem;
-  }
-
-  .proj-full-title {
-    font-size: clamp(1.5rem, 7vw, 2rem);
-  }
+  .proj-full-title { font-size: clamp(1.5rem, 7vw, 2rem) }
 
   .c-real-book {
-    width: 150px;
-    height: 210px;
+    width: 130px;
+    height: 180px;
   }
 
   .c-tabs-col {
-    height: 210px;
-    right: -46px;
+    height: 180px;
+    right: -44px;
   }
 
-  .c-info {
-    width: 160px;
-    font-size: 0.85rem;
-  }
+  .c-tab       { width: 40px }
+  .c-tab:hover { width: 48px }
+
+  .c-info { width: 140px }
 }
