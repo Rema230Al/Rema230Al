@@ -169,7 +169,7 @@ gsap.utils.toArray(".proj-full").forEach(proj => {
   );
 });
 
-// ── Active Nav on Scroll ──
+
 const secs  = document.querySelectorAll("section[id]");
 const navAs = document.querySelectorAll(".nav-links a");
 window.addEventListener("scroll", () => {
