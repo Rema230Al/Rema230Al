@@ -164,6 +164,7 @@
     width: 100%;
     height: auto;
     border-radius: 0.5rem;
+    padding: 0 1rem 0 2rem;
   }
 
   .proj-full.reverse { direction: ltr }
