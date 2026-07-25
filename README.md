@@ -1,7 +1,7 @@
 ### Hi there!
 
 I'm Remas Alsulami, a Senior Software Engineering student at the University of Jeddah, passionate about full-stack development and UI/UX.
-
+---------------
 ### About Me
 
 I work on full-stack projects and I'm building my skills in real projects. I design my own UIs, and I learn by doing rather than just researching — building something myself is what makes it click.
