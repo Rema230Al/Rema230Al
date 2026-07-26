@@ -67,6 +67,7 @@ I work on full-stack projects and I'm building my skills in real projects. I des
 
 </p>
 
+---
 
 # 📊 GitHub Stats:
 ![](https://github-readme-stats.shion.dev/api?username=Rema230Al&theme=radical&hide_border=false&include_all_commits=true&count_private=true)<br/>
