@@ -1,19 +1,10 @@
-### Hi there! 
+### Hi there!
 
-I'm Remas Alsulami, a Junior Software Engineering student at the University of Jeddah with a growing passion for Web Development and (UX|UI).
-I enjoy creating clean, simple, and user-friendly web experiences.
-Currently,I’m building projects to improve my skills and understand both the visual and technical sides of the web.
-
----
+I'm Remas Alsulami, a Senior Software Engineering student at the University of Jeddah, passionate about full-stack development and UI/UX.
 
 ### About Me
 
-- Learning full-stack development step by step  
-- Comfortable with HTML, CSS, and JavaScript
-- Currently learning Node.js, and planning to learn React next
-
----
-
+I work on full-stack projects and I'm building my skills in real projects. I design my own UIs, and I learn by doing rather than just researching — building something myself is what makes it click.
 ### Languages & Tools
 
 <p align="left">
