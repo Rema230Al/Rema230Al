@@ -1,13 +1,17 @@
 ### Hi there!
 
-I'm Remas Alsulami, a Senior Software Engineering student at the University of Jeddah, passionate about full-stack development and UI/UX.
+I'm Remas Alsulami, a Senior Software Engineering student at the University of Jeddah, passionate about full-stack developer and UI/UX.
 
 ### About Me
 
-I work on full-stack projects and I'm building my skills in real projects. I design my own UIs, and I learn by doing rather than just researching — building something myself is what makes it click.
+I work on full-stack projects and I'm building my skills in real projects. I design my own UIs, and I learn by doing rather than just researching building something myself is what makes it click.
+
+---
 ### Languages & Tools
 
+
 <p align="left">
+
 
   <!-- Languages -->
   <a href="https://www.learn-c.org/" target="_blank">
@@ -62,3 +66,14 @@ I work on full-stack projects and I'm building my skills in real projects. I des
   </a>
 
 </p>
+
+---
+
+# 📊 GitHub Stats:
+![](https://github-readme-stats.shion.dev/api?username=Rema230Al&theme=radical&hide_border=false&include_all_commits=true&count_private=true)<br/>
+![](https://streak-stats.demolab.com/?user=Rema230Al&theme=radical&hide_border=false)<br/>
+![](https://github-readme-stats.shion.dev/api/top-langs/?username=Rema230Al&theme=radical&hide_border=false&include_all_commits=true&count_private=true&layout=compact)
+
+---
+
+<!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
