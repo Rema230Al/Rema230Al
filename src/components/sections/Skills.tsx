@@ -13,17 +13,10 @@ export default function Skills() {
   useGSAP(() => revealOnScroll(root.current!), { scope: root });
 
   return (
-    <section
-      ref={root}
-      id="skills"
-      aria-label="Skills section"
-      className="relative grid gap-16 px-[var(--gutter)] py-[16svh] md:grid-cols-12 md:items-center"
-    >
-      <div className="md:col-span-4">
-        <SectionHeading chapter={SKILLS.chapter} title={SKILLS.title} desc={SKILLS.desc} />
-      </div>
+    <section ref={root} id="skills" aria-label="Skills section" className="relative px-[var(--gutter)] py-[16svh]">
+      <SectionHeading chapter={SKILLS.chapter} title={SKILLS.title} desc={SKILLS.desc} />
 
-      <div className="md:col-span-8">
+      <div className="mt-16">
         <SkillOrbits />
 
         {/* mobile / reduced motion: plain stacked lists */}

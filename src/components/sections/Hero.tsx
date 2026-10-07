@@ -17,23 +17,24 @@ export default function Hero() {
       const at = isMobileNow() ? { x: 0, y: -0.62, size: 0.5 } : { x: 0.55, y: -0.05, size: 0.82 };
       Object.assign(earth, at, { opacity: 0 });
 
-      gsap.to(earth, { opacity: 1, duration: 2.4, ease: "power2.out", delay: 0.3 });
+      // fade-in on load and drift-away on scroll combine, so neither overrides the other
+      // (e.g. a reload mid-page keeps the Earth hidden)
+      const f = { intro: 0, away: 0 };
+      const apply = () => {
+        earth.opacity = f.intro * (1 - f.away);
+        earth.y = at.y + 0.9 * f.away;
+        earth.spin = 1.5 * f.away;
+      };
+      gsap.to(f, { intro: 1, duration: 2.4, ease: "power2.out", delay: 0.3, onUpdate: apply });
+      gsap.to(f, {
+        away: 1,
+        ease: "none",
+        onUpdate: apply,
+        scrollTrigger: { trigger: root.current, start: "top top", end: "bottom top", scrub: 0.15 },
+      });
+
       gsap.from(".hr-title .mask-inner", { yPercent: 115, stagger: 0.1, duration: 1.6, ease: "expo.out", delay: 0.2 });
       gsap.from(".hr-fade", { opacity: 0, y: 20, stagger: 0.1, duration: 1.2, ease: "power3.out", delay: 0.7 });
-
-      // scrolling away: the Earth drifts up and dims
-      gsap.fromTo(
-        earth,
-        { y: at.y, opacity: 1, spin: 0 },
-        {
-          y: at.y + 0.9,
-          opacity: 0,
-          spin: 1.5,
-          ease: "none",
-          immediateRender: false,
-          scrollTrigger: { trigger: root.current, start: "top top", end: "bottom top", scrub: 0.15 },
-        },
-      );
     },
     { scope: root },
   );

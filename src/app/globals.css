@@ -140,7 +140,8 @@ html.lenis body {
 .skill-orbits {
   display: none;
 }
-@media (min-width: 768px) and (prefers-reduced-motion: no-preference) {
+/* orbits need the width: below 1024px labels would outgrow the ring gaps */
+@media (min-width: 1024px) and (prefers-reduced-motion: no-preference) {
   .skill-orbits {
     display: block;
   }
@@ -150,26 +151,26 @@ html.lenis body {
 }
 .orbit-core {
   background: radial-gradient(circle at 35% 32%, #9db8ff, #3b5bdb 45%, #0b1030 78%);
-  box-shadow: 0 0 60px rgb(90 134 255 / 0.35), inset -8px -10px 24px rgb(0 0 0 / 0.6);
-}
-.orbit {
-  animation: orbit-spin var(--period) linear infinite var(--dir);
-}
-.orbit .moon-upright {
-  animation: orbit-counter var(--period) linear infinite var(--dir);
-}
-.orbit:has(.moon:hover),
-.orbit:has(.moon:hover) .moon-upright {
-  animation-play-state: paused;
-}
-@keyframes orbit-spin {
-  to { transform: rotate(360deg); }
-}
-@keyframes orbit-counter {
-  to { transform: rotate(-360deg); }
+  box-shadow: 0 0 80px rgb(90 134 255 / 0.4), inset -12px -14px 32px rgb(0 0 0 / 0.6);
 }
 
-/* ---------- Contact: planet horizon + channel signal ---------- */
+/* ---------- Contact: channel timeline, planet horizon, signal ---------- */
+.ch-path {
+  background: linear-gradient(to bottom, #ff9f7a, #5a86ff, #a8f0f5, #f5e3bb);
+  box-shadow: 0 0 12px rgb(120 160 255 / 0.8);
+}
+.ch-planet {
+  background:
+    radial-gradient(circle at 34% 30%, rgb(255 255 255 / 0.45), transparent 28%),
+    radial-gradient(circle at 40% 38%, var(--c) 32%, #05070f 92%);
+  box-shadow: 0 0 28px color-mix(in srgb, var(--c) 55%, transparent);
+}
+
+/* fades the planet out at the section's bottom edge so it melts into the footer */
+.horizon-rise {
+  -webkit-mask-image: linear-gradient(to top, transparent, #000 14svh);
+  mask-image: linear-gradient(to top, transparent, #000 14svh);
+}
 .horizon {
   pointer-events: none;
   position: absolute;
