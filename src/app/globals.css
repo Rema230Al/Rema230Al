@@ -136,22 +136,15 @@ html.lenis body {
   100% { transform: translate(0, 0); }
 }
 
-/* ---------- Skill orbits (desktop with motion; stacked lists otherwise) ---------- */
-.skill-orbits {
-  display: none;
-}
-/* orbits need the width: below 1024px labels would outgrow the ring gaps */
-@media (min-width: 1024px) and (prefers-reduced-motion: no-preference) {
-  .skill-orbits {
-    display: block;
-  }
-  .skill-lists {
-    display: none;
-  }
-}
-.orbit-core {
-  background: radial-gradient(circle at 35% 32%, #9db8ff, #3b5bdb 45%, #0b1030 78%);
-  box-shadow: 0 0 80px rgb(90 134 255 / 0.4), inset -12px -14px 32px rgb(0 0 0 / 0.6);
+/* ---------- Skills star chart ---------- */
+/* faint astronomy-chart grid, fading out toward the edges */
+.star-grid {
+  background-image:
+    linear-gradient(to right, rgb(245 245 240 / 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(245 245 240 / 0.035) 1px, transparent 1px);
+  background-size: 56px 56px;
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 40%, transparent 80%);
+  mask-image: radial-gradient(ellipse at center, #000 40%, transparent 80%);
 }
 
 /* ---------- Contact: channel timeline, planet horizon, signal ---------- */
