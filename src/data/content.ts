@@ -90,7 +90,7 @@ export const PROJECTS = {
 
 export const CONTACT = {
   chapter: "Chapter-05",
-  title: "Contact",
+  title: "Let's build something",
   desc: "Have a project, opportunity, or idea? I'd love to hear about it",
   links: [
     {

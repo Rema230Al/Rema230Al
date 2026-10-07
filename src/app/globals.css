@@ -136,6 +136,86 @@ html.lenis body {
   100% { transform: translate(0, 0); }
 }
 
+/* ---------- Skill orbits (desktop with motion; stacked lists otherwise) ---------- */
+.skill-orbits {
+  display: none;
+}
+@media (min-width: 768px) and (prefers-reduced-motion: no-preference) {
+  .skill-orbits {
+    display: block;
+  }
+  .skill-lists {
+    display: none;
+  }
+}
+.orbit-core {
+  background: radial-gradient(circle at 35% 32%, #9db8ff, #3b5bdb 45%, #0b1030 78%);
+  box-shadow: 0 0 60px rgb(90 134 255 / 0.35), inset -8px -10px 24px rgb(0 0 0 / 0.6);
+}
+.orbit {
+  animation: orbit-spin var(--period) linear infinite var(--dir);
+}
+.orbit .moon-upright {
+  animation: orbit-counter var(--period) linear infinite var(--dir);
+}
+.orbit:has(.moon:hover),
+.orbit:has(.moon:hover) .moon-upright {
+  animation-play-state: paused;
+}
+@keyframes orbit-spin {
+  to { transform: rotate(360deg); }
+}
+@keyframes orbit-counter {
+  to { transform: rotate(-360deg); }
+}
+
+/* ---------- Contact: planet horizon + channel signal ---------- */
+.horizon {
+  pointer-events: none;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: max(160vw, 1400px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  transform: translate(-50%, calc(100% - 26svh)); /* only the top arc shows */
+  background: radial-gradient(circle at 50% 0%, #1b2c66 0%, #0a1030 14%, #020204 34%);
+  box-shadow:
+    0 0 90px 12px rgb(90 134 255 / 0.35),
+    inset 0 2px 0 rgb(170 200 255 / 0.7),
+    inset 0 30px 80px rgb(90 134 255 / 0.25);
+}
+
+.signal {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 12px;
+  color: rgb(245 245 240 / 0.6);
+  transition: color 0.5s ease, filter 0.5s ease;
+}
+.signal i {
+  width: 3px;
+  border-radius: 1px;
+  background: currentColor;
+  opacity: 0.25;
+  animation: signal 1.8s ease-in-out infinite;
+}
+.signal i:nth-child(1) { height: 40%; }
+.signal i:nth-child(2) { height: 70%; animation-delay: 0.2s; }
+.signal i:nth-child(3) { height: 100%; animation-delay: 0.4s; }
+.channel:hover .signal {
+  color: #8ef0b5;
+  filter: drop-shadow(0 0 4px #8ef0b5);
+}
+.channel:hover .signal i {
+  animation-duration: 0.7s;
+}
+@keyframes signal {
+  0%, 100% { opacity: 0.25; }
+  50% { opacity: 1; }
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -151,6 +231,10 @@ html.lenis body {
 @media (prefers-reduced-motion: reduce) {
   .grain {
     animation: none;
+  }
+  .signal i {
+    animation: none;
+    opacity: 0.8;
   }
   .link-underline::after {
     transition: none;
