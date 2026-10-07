@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import { gsap, useGSAP } from "@/lib/gsap";
 import { isMobileNow } from "@/lib/hooks";
-import { stage } from "@/lib/stage";
+import { stage, trackNear } from "@/lib/stage";
 import { HERO } from "@/data/content";
 import SplitWords from "@/components/ui/SplitWords";
 import MagneticLink from "@/components/ui/MagneticLink";
@@ -16,6 +16,7 @@ export default function Hero() {
       const earth = stage.earth;
       const at = isMobileNow() ? { x: 0, y: -0.62, size: 0.5 } : { x: 0.55, y: -0.05, size: 0.82 };
       Object.assign(earth, at, { opacity: 0 });
+      trackNear("earth", root.current!);
 
       // fade-in on load and drift-away on scroll combine, so neither overrides the other
       // (e.g. a reload mid-page keeps the Earth hidden)

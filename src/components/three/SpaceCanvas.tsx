@@ -1,6 +1,6 @@
 "use client";
 
-import { Suspense, useRef } from "react";
+import { Suspense, useRef, useState } from "react";
 import * as THREE from "three";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { PLANETS, type Planet } from "@/data/planets";
@@ -11,16 +11,18 @@ import Planet3D from "./Planet3D";
 const LIGHT_DIR = new THREE.Vector3(-1, 0.3, 0.65).normalize();
 const ORIGIN = new THREE.Vector3();
 
-/** One planet, placed every frame from its `stage` entry (as SOL's detail Rig does). */
+/** One planet, placed every frame from its `stage` entry (as SOL's detail Rig does); mounted only while near. */
 function Body({ planet, mobile, reduced }: { planet: Planet; mobile: boolean; reduced: boolean }) {
   const { viewport, camera } = useThree();
   const holder = useRef<THREE.Group>(null);
   const fade = useRef(0);
   const spin = useRef(0);
   const mouse = useRef(new THREE.Vector2());
+  const [near, setNear] = useState(false);
 
   useFrame((state, dt) => {
     const s = stage[planet.slug];
+    if (s.near !== near) setNear(s.near); // load / free the planet as its section approaches / leaves
     const g = holder.current;
     if (!g) return;
     g.visible = s.opacity > 0.01;
@@ -41,17 +43,19 @@ function Body({ planet, mobile, reduced }: { planet: Planet; mobile: boolean; re
 
   return (
     <group ref={holder} visible={false}>
-      <Suspense fallback={null}>
-        <Planet3D
-          planet={planet}
-          lightDir={LIGHT_DIR}
-          spin={reduced ? 0 : 0.07}
-          extraSpin={spin}
-          fade={fade}
-          detail={mobile ? 48 : 96}
-          clouds={!mobile}
-        />
-      </Suspense>
+      {near && (
+        <Suspense fallback={null}>
+          <Planet3D
+            planet={planet}
+            lightDir={LIGHT_DIR}
+            spin={reduced ? 0 : 0.07}
+            extraSpin={spin}
+            fade={fade}
+            detail={mobile ? 48 : 96}
+            clouds={!mobile}
+          />
+        </Suspense>
+      )}
     </group>
   );
 }

@@ -11,7 +11,7 @@ export default function SmoothScroll() {
     if (reduce) return; // native scrolling for reduced motion
 
     const lenis = new Lenis({
-      lerp: 0.18, // high lerp = page tracks the wheel closely, just softened
+      lerp: 0.3, // higher lerp = page follows the wheel more tightly, still softened
       wheelMultiplier: 1.1,
       touchMultiplier: 1.6,
     });

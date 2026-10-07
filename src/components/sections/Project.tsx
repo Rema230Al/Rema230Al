@@ -1,10 +1,11 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 import { gsap, useGSAP } from "@/lib/gsap";
 import { isMobileNow, prefersReducedNow } from "@/lib/hooks";
 import { revealOnScroll } from "@/lib/reveal";
-import { stage } from "@/lib/stage";
+import { stage, trackNear } from "@/lib/stage";
 import type { ProjectItem } from "@/data/content";
 import SplitWords from "@/components/ui/SplitWords";
 
@@ -29,9 +30,9 @@ export default function Project({ project, reverse }: { project: ProjectItem; re
         scrollTrigger: {
           trigger: root.current,
           start: mobile ? "top bottom" : "top top",
-          end: () => (mobile ? "bottom top" : `+=${window.innerHeight * 1.6}`),
+          end: () => (mobile ? "bottom top" : `+=${window.innerHeight}`),
           pin: !mobile,
-          scrub: prefersReducedNow() ? true : 0.15,
+          scrub: prefersReducedNow() ? true : 0.05,
           invalidateOnRefresh: true,
         },
       });
@@ -45,6 +46,8 @@ export default function Project({ project, reverse }: { project: ProjectItem; re
       tl.from(q(".pj-shot"), { opacity: 0, y: 80, scale: 0.94, duration: 0.3, ease: "power2.out" }, 0.1);
       tl.to(body, { y: at.y + 1.3, size: at.size * 1.2, opacity: 0, spin: 2.4, duration: 0.3, ease: "power2.in" }, 0.7);
       if (!mobile) tl.to(q(".pj-content"), { opacity: 0, y: -40, duration: 0.3 }, 0.7);
+
+      trackNear(project.planet, root.current!); // after the pin, so it measures the pinned length
     },
     { scope: root },
   );
@@ -97,10 +100,12 @@ export default function Project({ project, reverse }: { project: ProjectItem; re
       </div>
 
       <div className={`md:col-span-7 ${reverse ? "md:order-1" : ""}`}>
-        <img
-          src={project.image}
+        <Image
+          src={project.image.src}
+          width={project.image.width}
+          height={project.image.height}
           alt={`${project.title} screenshot`}
-          className="pj-shot mx-auto max-h-[60svh] w-full object-contain drop-shadow-[0_30px_60px_rgba(0,0,0,0.6)]"
+          className="pj-shot mx-auto h-auto max-h-[60svh] w-full object-contain drop-shadow-[0_30px_60px_rgba(0,0,0,0.6)]"
         />
       </div>
     </article>

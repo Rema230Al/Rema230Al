@@ -47,7 +47,7 @@ export type ProjectItem = {
   desc: string;
   github: string;
   website?: string;
-  image: string;
+  image: { src: string; width: number; height: number };
   planet: PlanetSlug;
 };
 
@@ -63,7 +63,7 @@ export const PROJECTS = {
       desc: "A full-stack healthcare web platform that helps users detect dangerous drug interactions instantly. Users can scan their medications using OCR instead of typing them manually, view a clear interaction table, and connect directly with a pharmacist through real-time chat powered by WebSockets. The platform also sends automated email notifications using NodeMailer.",
       github: "https://github.com/Rema230Al/Medixa",
       website: "https://medixa.onrender.com/",
-      image: "/assets/Project2.png",
+      image: { src: "/assets/Project2.webp", width: 939, height: 652 },
       planet: "neptune",
     },
     {
@@ -73,7 +73,7 @@ export const PROJECTS = {
       desc: "ReceiptVault — a full-stack web app that lets users scan receipts, automatically extract key details (store, date, total) using OCR, and manage them in a personal digital archive.",
       github: "https://github.com/Rema230Al/galleria-art",
       website: "https://receiptvault-7iwg.onrender.com/",
-      image: "/assets/mockP3.png",
+      image: { src: "/assets/mockP3.webp", width: 941, height: 673 },
       planet: "mars",
     },
     {
@@ -82,7 +82,7 @@ export const PROJECTS = {
       tags: ["HTML · CSS · JS", "Node.js", "Express", "MongoDB", "NodeMailer", "WebXR", "REST API", "Postman"],
       desc: "A full-stack web platform connecting artists and buyers, enabling users to browse, purchase, and request custom artwork. Features include user authentication, a personal wishlist, and a commission system with server-side email handling using NodeMailer — along with a WebAR feature that lets buyers visualize artworks in their real space before purchasing",
       github: "https://github.com/Rema230Al/Atelier",
-      image: "/assets/Atelier.png",
+      image: { src: "/assets/Atelier.webp", width: 1080, height: 695 },
       planet: "saturn",
     },
   ] satisfies ProjectItem[],
