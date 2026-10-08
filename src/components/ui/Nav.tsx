@@ -36,13 +36,14 @@ export default function Nav() {
         >
           RN
         </a>
-        <ul className="flex items-center gap-3 sm:gap-8">
+        <ul className="flex items-center gap-2 sm:gap-8">
           {NAV_LINKS.map((l) => (
-            <li key={l.id}>
+            // phones: the RN logo already goes home, so "Home" makes room for the other links
+            <li key={l.id} className={l.id === "hero" ? "hidden sm:block" : undefined}>
               <a
                 href={`#${l.id}`}
                 onClick={go(l.id)}
-                className="link-underline font-mono text-[10px] uppercase tracking-[0.16em] text-ink/80 hover:text-ink sm:text-[11px] sm:tracking-[0.2em]"
+                className="link-underline font-mono text-[10px] uppercase tracking-[0.1em] text-ink/80 hover:text-ink sm:text-[11px] sm:tracking-[0.2em]"
               >
                 {l.label}
               </a>

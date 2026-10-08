@@ -247,4 +247,12 @@ a:focus-visible > .link-underline::after {
   .has-custom-cursor .ch-info * {
     cursor: pointer !important;
   }
+  /* the custom cursor can't sit above a modal dialog, so the lightbox uses the system one */
+  .has-custom-cursor .lightbox,
+  .has-custom-cursor .lightbox * {
+    cursor: auto !important;
+  }
+  .has-custom-cursor .lightbox button {
+    cursor: pointer !important;
+  }
 }

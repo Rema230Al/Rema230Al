@@ -5,12 +5,13 @@ export const NAV_LINKS = [
   { label: "About", id: "about" },
   { label: "Skills", id: "skills" },
   { label: "Projects", id: "projects" },
+  { label: "Beyond", id: "beyond" },
   { label: "Contact", id: "contact" },
 ];
 
 export const HERO = {
   welcome: "Welcome to my portfolio",
-  name: ["Remas Nafea", "Alsulami"],
+  name: ["Remas ", "Alsulami"],
   role: "Full-Stack Software Engineer",
   desc: "The important thing is not to stop questioning.",
   cta: { label: "Explore my work", href: "https://github.com/Rema230Al?tab=repositories" },
@@ -19,9 +20,9 @@ export const HERO = {
 export const ABOUT = {
   chapter: "Chapter-02",
   title: "About Me",
-  desc: "I'm a Software Engineering student (2023–2027) who builds full-stack products end to end — from backend logic to the interfaces people actually touch. I've shipped three full-stack projects spanning healthcare, OCR, and real-time systems, each one teaching me something different about how the pieces actually fit together under real use. I care less about how a project looks in a demo, and more about whether it holds up when someone depends on it.",
+  desc: "I'm a Software Engineering student at the University of Jeddah, graduating in 2027. I enjoy building web applications from the ground up, working across both frontend and backend.Through projects involving OCR, real-time communication, and database-driven systems, I've gained hands-on experience turning ideas into working applications. I'm especially interested in backend development and understanding how different parts of a system come together",
   timeline: [
-    { label: "Started My Study", year: "2023", subtitle: "Computer Science & Software Engineering" },
+    { label: "Started My Study", year: "2023", subtitle: "Software Engineering" },
     { label: "Expected Graduation", year: "2027", subtitle: "Bachelor’s Degree — Class of 2027" },
   ],
 };
@@ -41,6 +42,8 @@ export const SKILLS = {
 };
 
 export type ProjectItem = {
+  id: string; // anchor, e.g. #medixa
+  award?: string; // badge linking to Beyond the Code
   category: string;
   title: string;
   tags: string[];
@@ -57,6 +60,8 @@ export const PROJECTS = {
   desc: "Some of the things I’ve built.",
   items: [
     {
+      id: "medixa",
+      award: "Best Project Award",
       category: "Full Stack / Healthcare",
       title: "Medixa Platform",
       tags: ["HTML · CSS · JS", "Node.js", "Tesseract.js (OCR)", "MySQL", "NodeMailer", "Postman", "WebSockets"],
@@ -67,6 +72,7 @@ export const PROJECTS = {
       planet: "neptune",
     },
     {
+      id: "receiptvault",
       category: "Full Stack",
       title: "ReceiptVault",
       tags: ["HTML · CSS · JS", "Node.js", "Express", "JWT auth", "Tesseract.js (OCR)", "MongoDB", "Postman"],
@@ -77,6 +83,7 @@ export const PROJECTS = {
       planet: "mars",
     },
     {
+      id: "atelier",
       category: "WebXR / Augmented Reality",
       title: "Atelier",
       tags: ["HTML · CSS · JS", "Node.js", "Express", "MongoDB", "NodeMailer", "WebXR", "REST API", "Postman"],
@@ -88,8 +95,58 @@ export const PROJECTS = {
   ] satisfies ProjectItem[],
 };
 
-export const CONTACT = {
+type Link = { label: string; href: string };
+type Media = { src: string; width: number; height: number; alt: string; caption?: string; link?: Link };
+
+export type BeyondItem = {
+  label: string;
+  title: string;
+  text: string;
+  link?: Link;
+  stats?: string[];
+  thumb?: Media; // small, opens in a lightbox
+  shots?: Media[]; // shown side by side
+};
+
+export const BEYOND = {
   chapter: "Chapter-05",
+  title: "Beyond the Code",
+  items: [
+    {
+      label: "Award · May 2026",
+      title: "Best Project Award — Medixa",
+      text: "Our team's healthcare platform, built for our web development course, received the Best Project certificate from the Department Chair.",
+      link: { label: "View project ↑", href: "#medixa" },
+      thumb: { src: "/assets/medixa-certificate.webp", width: 1170, height: 843, alt: "Best Project certificate for Medixa" },
+    },
+    {
+      label: "Leadership · 2026–2027",
+      title: "Programming Track Co-Leader — Tuwaiq Club, UJ",
+      text: "I work with the track lead to plan activities around what our members actually want to learn. To understand them better, I built an interactive survey instead of a standard form, and all 29 members responded. I later adapted it for the 3D Printing Track with its own theme.",
+      stats: ["29/29 responded", "2 tracks"],
+      shots: [
+        {
+          src: "/assets/survey-programming.webp",
+          width: 1200,
+          height: 641,
+          alt: "Programming Track survey screenshot",
+          caption: "Programming Track",
+          link: { label: "Try the survey ↗", href: "https://6c643436.tuwaiq-init.pages.dev/" },
+        },
+        {
+          src: "/assets/survey-3d.webp",
+          width: 1200,
+          height: 637,
+          alt: "3D Printing Track survey screenshot",
+          caption: "3D Printing Track",
+        },
+      ],
+    },
+  ] satisfies BeyondItem[],
+};
+
+export const CONTACT = {
+  chapter: "Chapter-06",
   title: "Let's build something",
   desc: "Have a project, opportunity, or idea? I'd love to hear about it",
   links: [

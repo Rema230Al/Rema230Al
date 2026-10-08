@@ -6,6 +6,7 @@ import { gsap, useGSAP } from "@/lib/gsap";
 import { isMobileNow, prefersReducedNow } from "@/lib/hooks";
 import { revealOnScroll } from "@/lib/reveal";
 import { stage, trackNear } from "@/lib/stage";
+import { scrollToTarget } from "@/lib/scroll";
 import type { ProjectItem } from "@/data/content";
 import SplitWords from "@/components/ui/SplitWords";
 
@@ -55,10 +56,24 @@ export default function Project({ project, reverse }: { project: ProjectItem; re
   return (
     <article
       ref={root}
+      id={project.id}
       aria-label={`Project: ${project.title}`}
       className="pj-content relative grid min-h-[100svh] items-center gap-12 px-[var(--gutter)] py-[12svh] md:grid-cols-12 md:py-0"
     >
       <div className={`md:col-span-5 ${reverse ? "md:order-2 md:col-start-8" : ""}`}>
+        {project.award && (
+          <a
+            href="#beyond"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToTarget("#beyond", 2);
+            }}
+            className="rv-fade mb-5 inline-flex items-center gap-2 rounded-full border border-[#f5e3bb]/40 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.14em] text-[#f5e3bb] transition-colors duration-500 hover:border-[#f5e3bb] hover:bg-[#f5e3bb]/10"
+          >
+            <span aria-hidden>★</span>
+            {project.award}
+          </a>
+        )}
         <p className="rv-fade label">{project.category}</p>
         <h3 className="rv-title display mt-4 text-[clamp(2.5rem,5vw,5rem)]">
           <SplitWords text={project.title} />
