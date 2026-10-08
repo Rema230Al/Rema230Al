@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, type CSSProperties } from "react";
-import { gsap, useGSAP } from "@/lib/gsap";
+import { gsap, ScrollTrigger, useGSAP } from "@/lib/gsap";
 import { prefersReducedNow } from "@/lib/hooks";
 import { revealOnScroll } from "@/lib/reveal";
 import { pad2 } from "@/lib/format";
@@ -35,18 +35,31 @@ export default function Contact() {
           .from(item.querySelector(".ch-info"), { opacity: 0, y: 16, duration: 0.7, ease: "power3.out" }, "-=0.5");
       });
 
-      // the horizon rises from below as the section ends, and sinks back on the way up
-      gsap.from(q(".horizon-rise"), {
-        y: () => window.innerHeight * 0.3,
-        ease: "none",
-        scrollTrigger: {
-          trigger: root.current,
-          start: "bottom 140%",
-          end: "bottom bottom",
-          scrub: 0.15,
-          invalidateOnRefresh: true,
+      // the horizon's rim sits at the bottom edge of the screen as the section enters, then climbs slowly
+      // until it lands in place exactly at the bottom of the page (and sinks back on the way up).
+      // Linear on purpose: a curved ease would, at its steepest, make the rim dip while scrolling down.
+      const lift = () => {
+        const start = root.current!.getBoundingClientRect().top + window.scrollY - window.innerHeight;
+        const range = ScrollTrigger.maxScroll(window) - start;
+        // in the final view, the footer plus the visible arc (26svh, see .horizon) fill the screen bottom
+        const settled = document.querySelector("footer")!.offsetHeight + window.innerHeight * 0.26;
+        return range - settled;
+      };
+      gsap.fromTo(
+        q(".horizon-rise"),
+        { y: () => -lift() },
+        {
+          y: 0,
+          ease: "none",
+          scrollTrigger: {
+            trigger: root.current,
+            start: "top bottom",
+            end: "max",
+            scrub: 1.5,
+            invalidateOnRefresh: true,
+          },
         },
-      });
+      );
     },
     { scope: root },
   );
