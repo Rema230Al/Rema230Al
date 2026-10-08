@@ -139,6 +139,7 @@ export const BEYOND = {
           height: 637,
           alt: "3D Printing Track survey screenshot",
           caption: "3D Printing Track",
+          link: { label: "Try the survey ↗", href: "https://preview.tuwaiq-3d-track.pages.dev/" },
         },
       ],
     },
