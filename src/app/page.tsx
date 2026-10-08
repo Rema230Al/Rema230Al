@@ -14,8 +14,11 @@ export default function Home() {
       <Skills />
       <Projects />
       <Beyond />
-      <Contact />
-      <Footer />
+      {/* clips Contact's planet horizon, which can sink into the footer and below the page bottom */}
+      <div className="relative overflow-hidden">
+        <Contact />
+        <Footer />
+      </div>
     </>
   );
 }

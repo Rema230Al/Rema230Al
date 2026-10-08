@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, type CSSProperties } from "react";
-import { gsap, ScrollTrigger, useGSAP } from "@/lib/gsap";
+import { gsap, useGSAP } from "@/lib/gsap";
 import { prefersReducedNow } from "@/lib/hooks";
 import { revealOnScroll } from "@/lib/reveal";
 import { pad2 } from "@/lib/format";
@@ -35,29 +35,17 @@ export default function Contact() {
           .from(item.querySelector(".ch-info"), { opacity: 0, y: 16, duration: 0.7, ease: "power3.out" }, "-=0.5");
       });
 
-      // the horizon's rim sits at the bottom edge of the screen as the section enters, then climbs slowly
-      // until it lands in place exactly at the bottom of the page (and sinks back on the way up).
-      // Linear on purpose: a curved ease would, at its steepest, make the rim dip while scrolling down.
-      const lift = () => {
-        const start = root.current!.getBoundingClientRect().top + window.scrollY - window.innerHeight;
-        const range = ScrollTrigger.maxScroll(window) - start;
-        // in the final view, the footer plus the visible arc (26svh, see .horizon) fill the screen bottom
-        const settled = document.querySelector("footer")!.offsetHeight + window.innerHeight * 0.26;
-        return range - settled;
-      };
+      // the horizon starts low in the footer, only a sliver above the page bottom, and rises slowly while the
+      // section scrolls by, landing in place exactly at the bottom of the page (and sinking back on the way up).
+      // Its visible arc is 26svh (see .horizon); lowering it by footer + 22svh leaves ~4svh showing.
+      const low = () => document.querySelector("footer")!.offsetHeight + window.innerHeight * 0.22;
       gsap.fromTo(
         q(".horizon-rise"),
-        { y: () => -lift() },
+        { y: low },
         {
           y: 0,
-          ease: "none",
-          scrollTrigger: {
-            trigger: root.current,
-            start: "top bottom",
-            end: "max",
-            scrub: 1.5,
-            invalidateOnRefresh: true,
-          },
+          ease: "power2.in", // stays low while off-screen, does most of its climb once the footer is in view
+          scrollTrigger: { trigger: root.current, start: "top bottom", end: "max", scrub: 1, invalidateOnRefresh: true },
         },
       );
     },
@@ -69,7 +57,7 @@ export default function Contact() {
       ref={root}
       id="contact"
       aria-label="Contact section"
-      className="relative overflow-hidden px-[var(--gutter)] pb-[36svh] pt-[16svh]"
+      className="relative px-[var(--gutter)] pb-[36svh] pt-[16svh]"
     >
       <div aria-hidden className="horizon-rise pointer-events-none absolute inset-0">
         <div className="horizon" />
