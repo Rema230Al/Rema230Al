@@ -93,7 +93,7 @@ export default function Contact() {
                     <span className="label block">
                       Channel {pad2(i + 1)} · {c.label}
                     </span>
-                    <span className="mt-3 block break-all text-[clamp(1.25rem,2.2vw,2rem)] font-light tracking-[-0.02em] transition-colors duration-500 group-hover:text-[#9db8ff]">
+                    <span className="link-underline mt-3 break-all text-[clamp(1.25rem,2.2vw,2rem)] font-light tracking-[-0.02em] transition-colors duration-500 group-hover:text-[#9db8ff]">
                       {c.value}
                     </span>
                     {c.sub && <span className="label mt-2 block">{c.sub}</span>}

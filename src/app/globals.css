@@ -104,7 +104,9 @@ html.lenis body {
   transition: transform 0.6s var(--ease-out-expo);
 }
 .link-underline:hover::after,
-.link-underline:focus-visible::after {
+.link-underline:focus-visible::after,
+a:hover > .link-underline::after,
+a:focus-visible > .link-underline::after {
   transform: scaleX(1);
   transform-origin: left;
 }
@@ -239,5 +241,10 @@ html.lenis body {
   .has-custom-cursor,
   .has-custom-cursor * {
     cursor: none !important;
+  }
+  /* contact channels keep the system pointer so they read as clickable */
+  .has-custom-cursor .ch-info,
+  .has-custom-cursor .ch-info * {
+    cursor: pointer !important;
   }
 }
